@@ -1,30 +1,21 @@
 while True:
     opt = int(input("convert decimal to any radix (1)\nor from any radix to decimal (2)\n"))
     if opt == 1:
-        n = int(input('enter number: '))
-        r = int(input('enter radix to convert: '))
-        x = []
-        while n > 1:
-            a = n % r
-            x.append(a)
-            n = n // r
-        x.append(n)
-        x.reverse()
-        print(x)
+        num = int(input("enter the number: "))
+        rad = int(input("enter the radix: "))
+        ans = ""
+        while(num>=1):
+            rem = num % rad
+            ans = ans + str(rem)
+            num = num // rad
+        ans = ans[::-1]
+        print(ans)
     elif opt == 2:
-        b = 0
-        r = int(input('enter radix of the number: '))
-        x = []
-        print('enter number and q to exit: ')
-        while True:
-            x.append(input())
-            if x[-1] == 'q':
-                x.remove('q')
-                break
-        print(x)
-        x.reverse()
-        for i in range(len(x) -1, -1, -1):
-            b += int(x[i]) * (r ** i)
-        print(b)
+        rad = int(input("enter radix: "))
+        num = input("enter number: ")
+        s=0
+        for i in range (len(num)-1,-1,-1):
+            s=s+(int(num[i])*(rad(**(len(num)-1-i)))
+        print(s)
     else:
         break
